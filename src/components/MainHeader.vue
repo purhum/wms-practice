@@ -6,6 +6,7 @@
     <div class="header-right">
       <div class="header-user-con">
         <el-container class="user-name">
+          <el-icon><Avatar /></el-icon>
           <el-text class="user-span">
             {{ username }}
           </el-text>

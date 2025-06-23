@@ -43,6 +43,7 @@
 }
 .el-menu-vertical-demo {
   height: 100%;
+  padding-top: 60px;
 }
 .el-menu-vertical-demo:not(.el-menu--collapse) {
   width: 200px;
