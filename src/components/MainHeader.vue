@@ -16,8 +16,9 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-const username = ref('admin')
+import { useAccount } from '@/stores/user'
+
+const username = useAccount()
 </script>
 <style scoped>
 .header {

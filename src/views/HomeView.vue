@@ -18,7 +18,6 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
 import MainMenu from '../components/MainMenu.vue'
 import MainHeader from '../components/MainHeader.vue'
 </script>
