@@ -1,63 +1,50 @@
 <template>
-  <el-radio-group v-model="isCollapse" style="margin-bottom: 20px">
-    <el-radio-button :value="false">expand</el-radio-button>
-    <el-radio-button :value="true">collapse</el-radio-button>
-  </el-radio-group>
   <el-menu
     default-active="2"
+    text-color="beige"
+    active-text-color="#ffd04b"
     class="el-menu-vertical-demo"
-    :collapse="isCollapse"
-    @open="handleOpen"
-    @close="handleClose"
+    background-color="rgb(51.2, 126.4, 204)"
+    router
   >
-    <el-sub-menu index="1">
+    <el-menu-item index="welcome">
+      <el-icon><Menu /></el-icon>
+      <template #title>Home</template>
+    </el-menu-item>
+    <el-sub-menu index="2">
       <template #title>
         <el-icon><location /></el-icon>
-        <span>Navigator One</span>
+        <span>Warehouse</span>
       </template>
       <el-menu-item-group>
-        <template #title><span>Group One</span></template>
-        <el-menu-item index="1-1">item one</el-menu-item>
-        <el-menu-item index="1-2">item two</el-menu-item>
+        <template #title><span>Tasks</span></template>
+        <el-menu-item index="t-rms">Raw Material Storage</el-menu-item>
+        <el-menu-item index="t-rmo">Raw Material Outflow</el-menu-item>
       </el-menu-item-group>
-      <el-menu-item-group title="Group Two">
-        <el-menu-item index="1-3">item three</el-menu-item>
+      <el-menu-item-group title="Report Forms">
+        <el-menu-item index="rpt-inventory">Inventory</el-menu-item>
       </el-menu-item-group>
-      <el-sub-menu index="1-4">
-        <template #title><span>item four</span></template>
-        <el-menu-item index="1-4-1">item one</el-menu-item>
+      <el-sub-menu index="rpt-task">
+        <template #title><span>Task</span></template>
       </el-sub-menu>
     </el-sub-menu>
-    <el-menu-item index="2">
-      <el-icon><icon-menu /></el-icon>
-      <template #title>Navigator Two</template>
-    </el-menu-item>
-    <el-menu-item index="3" disabled>
-      <el-icon><document /></el-icon>
-      <template #title>Navigator Three</template>
-    </el-menu-item>
-    <el-menu-item index="4">
+    <el-menu-item index="settings">
       <el-icon><setting /></el-icon>
-      <template #title>Navigator Four</template>
+      <template #title>Settings</template>
     </el-menu-item>
   </el-menu>
 </template>
 
-<script lang="ts" setup>
-import { ref } from 'vue'
+<script lang="ts" setup></script>
 
-const isCollapse = ref(true)
-const handleOpen = (key, keyPath) => {
-  console.log(key, keyPath)
+<style lang="less" scoped>
+.btn-menu-collapse {
+  margin-right: 0;
 }
-const handleClose = (key, keyPath) => {
-  console.log(key, keyPath)
+.el-menu-vertical-demo {
+  height: 100%;
 }
-</script>
-
-<style>
 .el-menu-vertical-demo:not(.el-menu--collapse) {
   width: 200px;
-  min-height: 400px;
 }
 </style>
