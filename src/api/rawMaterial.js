@@ -24,12 +24,14 @@ export function getMaterials(warehouseId) {
   })
 }
 
-export function materialStorage(materialId) {
+export function materialStorage(warehouseId, materialId, addCount) {
   const data = {
+    warehouseId,
     materialId,
+    addCount,
   }
   return request({
-    url: '/material',
+    url: '/material/storage',
     headers: {
       isToken: false,
     },
