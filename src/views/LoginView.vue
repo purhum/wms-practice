@@ -16,7 +16,7 @@
         </el-form>
       </el-main>
       <el-footer class="card-footer">
-        <el-button type="success" class="login-button" @click="login"> Login In</el-button>
+        <el-button type="success" class="login-button" @click="submit()"> Login In</el-button>
       </el-footer>
     </el-card>
   </div>
@@ -25,16 +25,27 @@
 <script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { login } from '@/api/login'
+import { userLogin } from '@/stores/user'
 
 const router = useRouter()
 
 const userName = ref('')
 const password = ref('')
 
-function login() {
-  // TODO
-  console.log('goto home')
-  router.push('/home')
+function submit() {
+  login(userName, password).then(
+    (data) => {
+      // TODO
+      console.log(data)
+      router.push('/welcoem')
+    },
+    () => {
+      console.log('login success(fake)')
+      userLogin(userName)
+      router.push('/welcome')
+    },
+  )
 }
 </script>
 
